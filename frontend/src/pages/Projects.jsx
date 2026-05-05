@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Navbar from '../components/common/Navbar';
-import ProjectCard from '../components/projects/ProjectCard';
-import ProjectForm from '../components/projects/ProjectForm';
+import ProjectCard from '../components/Projects/ProjectCard';
+import ProjectForm from '../components/Projects/ProjectForm';
 import Modal from '../components/common/Modal';
 import Loader from '../components/common/Loader';
 import { useProjects } from '../hooks/useProjects';
