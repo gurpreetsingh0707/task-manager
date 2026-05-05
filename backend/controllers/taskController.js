@@ -50,7 +50,7 @@ exports.updateTask = asyncHandler(async (req, res) => {
         res.status(403); throw new Error('You can only update tasks assigned to you');
     }
 
-    const updated = await Task.findByIdAndUpdate(req.params.id, req.body, { new: true })
+    const updated = await Task.findByIdAndUpdate(req.params.id, req.body, { returnDocument: 'after' })
         .populate('assignedTo', 'name email');
     res.json(updated);
 });

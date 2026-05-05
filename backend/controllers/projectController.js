@@ -35,7 +35,7 @@ exports.getProject = asyncHandler(async (req, res) => {
 
 // PUT update project (admin only )
 exports.updateProject = asyncHandler(async (req, res) => {
-    const project = await Project.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    const project = await Project.findByIdAndUpdate(req.params.id, req.body, { returnDocument: 'after' });
     res.json(project);
 });
 
