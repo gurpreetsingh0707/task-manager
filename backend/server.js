@@ -21,8 +21,13 @@ app.use('/api/tasks', require('./routes/taskRoutes'));
 
 const { notFound, errorHandler } = require('./middleware/errorMiddleware');
 
+// Health check route for Render
+app.get('/', (req, res) => res.send('API is running...'));
+
 app.use(notFound);
 app.use(errorHandler);
-app.listen(process.env.PORT, () =>
-    console.log(`Server running on port ${process.env.PORT}`)
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, '0.0.0.0', () =>
+    console.log(`Server running on port ${PORT}`)
 );
